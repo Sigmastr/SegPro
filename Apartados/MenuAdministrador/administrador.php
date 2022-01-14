@@ -583,32 +583,31 @@ include('../../Conexion/conexion.php');
               <div class="modal-body">
 
 
-                <form method="POST">
+                <form method="POST" action="../../PhP/INSERTAR_TipoContrato.php">
 
                   <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
                     Tipo de Contrato</h4>
                   <div class="form-row">
                     <div class="form-group col-md-6" style>
-                      <label for="inputPeriodo">Periodo de Acceso:</label>
+                      <label for="inputPeriodo">Servicio a dar:</label>
                       <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-user"></i>
                         </div>
-                        <input type="text" class="form-control" id="PeriodoAcceso" placeholder="Servicio Técnico, mantención,etc">
+                        <input type="text" class="form-control" name="PeriodoAcceso" id="PeriodoAcceso" placeholder="Servicio Técnico, mantención,etc">
                       </div>
 
                     </div>
 
 
                   </div>
-
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                  </div>
                 </form>
 
+              </div>
 
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Agregar</button>
-              </div>
             </div>
           </div>
         </div>
@@ -626,8 +625,8 @@ include('../../Conexion/conexion.php');
               <div class="modal-body">
 
 
-                <form method="POST">
-                  @csrf
+                <form method="POST" action="../../PhP/INSERTAR_EstadoCliente_Sistema.php">
+
                   <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
                     Estado Cliente en el sistema</h4>
                   <div class="form-row">
@@ -636,22 +635,22 @@ include('../../Conexion/conexion.php');
                       <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-user"></i>
                         </div>
-                        <input type="text" class="form-control" id="PeriodoAcceso" placeholder="15 días,30 días,60, etc">
+                        <input type="text" class="form-control" name="EstadoCliente" id="EstadoCliente" placeholder="15 días,30 días,60, etc">
                       </div>
 
                     </div>
 
 
                   </div>
-
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button type="submit" class="btn btn-primary">Agregar</button>
+                  </div>
                 </form>
 
 
               </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Agregar</button>
-              </div>
+
             </div>
           </div>
         </div>
