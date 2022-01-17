@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <title>Login SegProject</title>
+    <link rel="stylesheet" href="../recursos/css/IndexStyle.css" />
+    <!-- <link rel="stylesheet" href="css/styleProveedor.css" /> -->
+  </head>
+  <body class="main">
+    <form action="action_page.php" method="post">
+      <div class="imgcontainer">
+        <img src="../recursos/imagene/logo.png" />
+      </div>
+
+      <div class="container">
+        <label for="uname"><b>Usuario</b></label>
+        <br />
+        <input
+          type="text"
+          placeholder="Ingrese usuario"
+          name="uname"
+          required
+        />
+        <br />
+        <label for="psw"><b>Contraseña</b></label>
+        <br />
+        <input
+          type="password"
+          placeholder="Ingrese contraseña"
+          name="psw"
+          required
+        />
+
+        <button type="submit">Iniciar Sesión</button>
+      </div>
+
+      <div class="container" style="background-color: #f1f1f1">
+        <span class="psw">¿Ha olvidado su <a href="#">contraseña?</a></span>
+      </div>
+    </form>
+  </body>
+</html>
