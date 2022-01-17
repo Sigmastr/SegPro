@@ -554,12 +554,12 @@ include('../../Conexion/conexion.php');
                         <div class="modal-body">
 
 
-                          <form method="POST">
+                          <form method="POST" action="../../PhP/INSERTAR_FichaCliente.php">
                             <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
                               Datos del Cliente</h4>
                             <div class="form-row">
                               <div class="form-group col-md-6">
-                                <label for="inputEmail4">Nombre de Cliente</label>
+                                <label for="inputNombreCliente">Nombre de Cliente</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-user"></i>
                                   </div>
@@ -568,11 +568,11 @@ include('../../Conexion/conexion.php');
 
                               </div>
                               <div class="form-group col-md-6">
-                                <label for="inputPassword4">Rut</label>
+                                <label for="inputRut">Rut</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-address-card"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="RutCliente" placeholder="11111111-1">
+                                  <input type="text" class="form-control" name="RutCliente" id="RutCliente" placeholder="11111111-1">
                                 </div>
 
                               </div>
@@ -581,20 +581,20 @@ include('../../Conexion/conexion.php');
                             <div class="form-row">
 
                               <div class="form-group col-md-6">
-                                <label for="inputEmail4">Telefono</label>
+                                <label for="inputTlf">Telefono</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-mobile"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="NombreCliente" placeholder="911111111">
+                                  <input type="text" class="form-control" name="telefono" id="telefono" placeholder="911111111">
                                 </div>
 
                               </div>
                               <div class="form-group col-md-6">
-                                <label for="inputPassword4">Actividad</label>
+                                <label for="inputActividad">Actividad</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-briefcase"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="RutCliente" placeholder="Ingrese su actividad">
+                                  <input type="text" class="form-control" name="Actividad" id="Actividad" placeholder="Ingrese su actividad">
                                 </div>
 
                               </div>
@@ -611,11 +611,11 @@ include('../../Conexion/conexion.php');
 
                               </div>
                               <div class="form-group col-md-6">
-                                <label for="inputPassword4">Región</label>
+                                <label for="inputRegion">Región</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-building"></i>
                                   </div>
-                                  <select class="form-control" id="region">
+                                  <select class="form-control" name="region" id="region">
                                     <?php
                                     $sql = ("SELECT * FROM region");
                                     $query = $conn->query($sql);
@@ -636,7 +636,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-house-user"></i>
                                   </div>
-                                  <select class="form-control" id="ciudad">
+                                  <select class="form-control" name="ciudad" id="ciudad">
                                     <!-- php aquí -->
                                     <?php
                                     $sql = ("SELECT * FROM comuna");
@@ -654,7 +654,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-building"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="direccion" placeholder="Ingrese la dirección">
+                                  <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ingrese la dirección">
                                 </div>
 
                               </div>
@@ -666,14 +666,11 @@ include('../../Conexion/conexion.php');
                             <div class="form-row">
 
                               <div class="form-group col-md-4">
-                                <label for="inputPassword4">Plazo Pago</label>
+                                <label for="inputPlazoPago">PlazodePago</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-building"></i>
                                   </div>
-                                  <select class="form-control" id="ciudad">
-                                    <option value="0">Seleccionar Plazo de pago</option>
-                                    <option value="1">Contado</option>
-                                  </select>
+                                  <input type="text" class="form-control" name="PPago" id="PPago" placeholder="Ingrese el plazo de pago en días">
                                 </div>
 
                               </div>
@@ -682,7 +679,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-phone"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="ContactoPago" placeholder="Ingrese nombre del contacto">
+                                  <input type="text" class="form-control" name="TelefonoCobranza" id="TelefonoCobranza" placeholder="Ingrese nombre del contacto">
                                 </div>
 
                               </div>
@@ -691,7 +688,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-envelope"></i>
                                   </div>
-                                  <input type="email" class="form-control" id="CorreoPago" placeholder="contacto@dominio.com">
+                                  <input type="email" class="form-control" name="CorreoPago" id="CorreoPago" placeholder="contacto@dominio.com">
                                 </div>
 
                               </div>
@@ -702,11 +699,11 @@ include('../../Conexion/conexion.php');
 
                               <div class="form-group col-md-6">
 
-                                <label for="inputFonoPago">Dirección Pago</label>
+                                <label for="inputDireccionPago">Dirección Pago</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-building"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="FonoPago" placeholder="Ingrese la dirección de pago">
+                                  <input type="text" class="form-control" name="DirecPago" id="DirecPago" placeholder="Ingrese la dirección de pago">
                                 </div>
 
                               </div>
@@ -715,7 +712,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-wallet"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="CorreoPago" placeholder="Ingrese Línea de pago">
+                                  <input type="text" class="form-control" name="LineCredit" id="LineCredit" placeholder="Ingrese Línea de pago">
                                 </div>
 
                               </div>
@@ -727,11 +724,11 @@ include('../../Conexion/conexion.php');
                             <div class="form-row">
 
                               <div class="form-group col-md-4">
-                                <label for="inputPassword4">Representante</label>
+                                <label for="InpuntRepre">Representante</label>
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-user"></i>
                                   </div>
-                                  <input type="text" class="form-control" id="NombreRepresentante" placeholder="ingrese nombre de Representante">
+                                  <input type="text" class="form-control" name="NombreRepresentante" id="NombreRepresentante" placeholder="ingrese nombre de Representante">
                                 </div>
 
                               </div>
@@ -740,7 +737,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-envelope"></i>
                                   </div>
-                                  <input type="email" class="form-control" id="CorreoPago" placeholder="contacto@dominio.com">
+                                  <input type="email" class="form-control" name="CorreoCliente" id="CorreoCliente" placeholder="contacto@dominio.com">
                                 </div>
 
                               </div>
@@ -763,7 +760,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-user"></i>
                                   </div>
-                                  <select class="form-control" id="EstadoCliente">
+                                  <select class="form-control" name="EstadoCliente" id="EstadoCliente">
                                     <?php
                                     $sql = ("SELECT * FROM estado_cliente_sistema");
                                     $query = $conn->query($sql);
@@ -781,7 +778,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-user"></i>
                                   </div>
-                                  <select class="form-control" id="ciudad">
+                                  <select class="form-control" name="TipoCliente" id="TipoCliente">
                                     <option value="0">Seleccionar tipo de Cliente</option>
                                     <?php
                                     $sql = ("SELECT * FROM tipocliente");
@@ -799,7 +796,7 @@ include('../../Conexion/conexion.php');
                                 <div class="input-group-prepend">
                                   <div class="input-group-text"><i class="fas fa-copy"></i>
                                   </div>
-                                  <select class="form-control" id="contrato">
+                                  <select class="form-control" name="contrato" id="contrato">
                                     <?php
                                     $sql = ("SELECT * FROM tipocontrato");
                                     $query = $conn->query($sql);
@@ -812,14 +809,15 @@ include('../../Conexion/conexion.php');
 
                               </div>
                             </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                              <button type="submit" class="btn btn-primary">Agregar</button>
+                            </div>
                           </form>
 
 
                         </div>
-                        <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                          <button type="button" class="btn btn-primary">Agregar</button>
-                        </div>
+
                       </div>
                     </div>
                   </div>
@@ -838,9 +836,33 @@ include('../../Conexion/conexion.php');
                         <th>Ciudad</th>
                         <th>Actividad</th>
                         <th>Ejecutivo</th>
+                        <th>Acciones</th>
                       </tr>
                     </thead>
+                    <tbody>
+                      <?php
+                      $sql = "SELECT * FROM cliente";
+                      $resultado = mysqli_query($conn, $sql);
+                      while ($filas = mysqli_fetch_array($resultado)) {
 
+                      ?>
+                        <tr>
+                          <td><?php echo $filas['Nombre'] ?></td>
+                          <td><?php echo $filas['Rut'] ?></td>
+                          <td><?php echo $filas['Email'] ?></td>
+                          <td><?php echo $filas['Telefono'] ?></td>
+                          <td><?php echo $filas['Region'] ?></td>
+                          <td><?php echo $filas['Ciudad'] ?></td>
+                          <td><?php echo $filas['Actividad'] ?></td>
+                          <td><?php echo $filas['Representante'] ?></td>
+                          <td><button type="button" class="btn btn-primary"><i class="fas fa-edit"></i></button>
+                            <a href="../../CRUD/DELETE_Cliente.php?id=<?php echo $filas['Rut'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
+                          </td>
+                        </tr>
+                      <?php
+                      }
+                      ?>
+                    </tbody>
                   </table>
                 </div>
                 <!-- /.card-body -->
@@ -912,7 +934,7 @@ include('../../Conexion/conexion.php');
       });
       $('#example2').DataTable({
         "paging": true,
-        "lengthChange": false,
+        "lengthChange": true,
         "searching": true,
         "ordering": true,
         "info": true,
