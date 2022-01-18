@@ -593,7 +593,7 @@ include('../../Conexion/conexion.php');
                       <div class="input-group-prepend">
                         <div class="input-group-text"><i class="fas fa-user"></i>
                         </div>
-                        <input type="text" class="form-control" name="PeriodoAcceso" id="PeriodoAcceso" placeholder="Servicio Técnico, mantención,etc">
+                        <input type="text" class="form-control" name="PeriodoAcceso" id="PeriodoAcceso" placeholder="Fijo, indefinido,etc">
                       </div>
 
                     </div>
