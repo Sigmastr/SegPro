@@ -501,7 +501,7 @@ include('../../Conexion/conexion.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Sección Ficha Empleados</h1>
+                            <h1 class="m-0">Sección Bodega</h1>
                         </div>
                         <!-- /.col -->
 
@@ -530,24 +530,21 @@ include('../../Conexion/conexion.php');
                                     <!-- Aquí poner los botones -->
                                     <!-- Button trigger modal -->
                                     <div class="botones" style="margin-bottom:1%; margin-top:1%">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#FichaEmpleado">
-                                            Ingresar Empleado
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#AgregarBodega">
+                                            Agregar Bodega
                                         </button>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CrearCargo">
-                                            Crear Cargo
-                                        </button>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#FichaCuadrilla">
-                                            Ingresar Cuadrilla
-                                        </button>
+
 
                                     </div>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="FichaEmpleado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+                                    <div class="modal fade" id="AgregarBodega" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header" style="background-color:#3f668d">
-                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ficha Empleado</h5>
+                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Agregar Bodega</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -555,183 +552,103 @@ include('../../Conexion/conexion.php');
                                                 <div class="modal-body">
 
 
-                                                    <form method="POST" action="../../PhP/INSERTAR_EMPLEADO.php">
+                                                    <form method="POST" action="../../PhP/INSERTAR_Bodega.php">
                                                         <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
-                                                            Datos del Empleado</h4>
+                                                            Datos de Bodega</h4>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Nombre del Empleado</label>
+                                                                <label for="inputNombreEmpleado">Nombre de Bodega</label>
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text"><i class="fas fa-user"></i>
                                                                     </div>
-                                                                    <input type="text" class="form-control" name="NombreEmpleado" id="NombreEmpleado" placeholder="Ingrese nombre del empleado">
+                                                                    <input type="text" class="form-control" name="NombreBodega" id="NombreBodega" placeholder="Ingrese nombre de la bodega">
                                                                 </div>
 
                                                             </div>
                                                             <div class="form-group col-md-6">
-                                                                <label for="inputRut">Rut</label>
+                                                                <label for="inputDireccion">Dirección</label>
                                                                 <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-address-card"></i>
+                                                                    <div class="input-group-text"><i class="fas fa-building"></i>
                                                                     </div>
-                                                                    <input type="text" class="form-control" name="RutEmpleado" id="RutEmpleado" placeholder="11111111-1">
+                                                                    <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Ingrese la dirección">
                                                                 </div>
 
                                                             </div>
+
 
                                                         </div>
                                                         <div class="form-row">
-
                                                             <div class="form-group col-md-6">
-                                                                <label for="inputTlf">Telefono</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-mobile"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="911111111">
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputEmail">Email</label>
+                                                                <label for="inputEmail5">Correo</label>
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text"><i class="fas fa-envelope"></i>
                                                                     </div>
-                                                                    <input type="email" class="form-control" name="Email" id="Email" placeholder="contacto@dominio.com">
+                                                                    <input type="email" class="form-control" name="Correo" id="Correo" placeholder="bodega@dominio.com">
                                                                 </div>
 
                                                             </div>
-
-
-                                                        </div>
-                                                        <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #4437ff;">
-                                                            Asignación de estado</h4>
-
-                                                        <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Seleccionar Cuadrilla</label>
+                                                                <label for="inputRegion">Región</label>
                                                                 <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-user"></i>
+                                                                    <div class="input-group-text"><i class="fas fa-building"></i>
                                                                     </div>
-                                                                    <select class="form-control" name="Cuadrilla" id="Cuadrilla">
+                                                                    <select class="form-control" name="region" id="region">
                                                                         <?php
-                                                                        $sql = ("SELECT * FROM cuadrilla");
+                                                                        $sql = ("SELECT * FROM region");
                                                                         $query = $conn->query($sql);
                                                                         while ($valores = mysqli_fetch_array($query)) {
-                                                                            echo '<option value="' . $valores['id_personal'] . '">' . $valores['Tipo_cuadrilla'] . '</option>';
-                                                                            //por defecto se creará como libre
+                                                                            echo '<option value="' . $valores['Id_Region'] . '">' . $valores['Nombre'] . '</option>';
                                                                         }
                                                                         ?>
-
                                                                     </select>
                                                                 </div>
 
                                                             </div>
+                                                        </div>
+                                                        <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                <label for="inputCargo">Seleccione Cargo</label>
+                                                                <label for="inputCiudad">Ciudad</label>
                                                                 <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-address-card"></i>
+                                                                    <div class="input-group-text"><i class="fas fa-house-user"></i>
                                                                     </div>
-                                                                    <select class="form-control" name="cargo" id="cargo">
+                                                                    <select class="form-control" name="ciudad" id="ciudad">
+                                                                        <!-- php aquí -->
                                                                         <?php
-                                                                        $sql = ("SELECT * FROM tipocargo");
+                                                                        $sql = ("SELECT * FROM comuna");
                                                                         $query = $conn->query($sql);
                                                                         while ($valores = mysqli_fetch_array($query)) {
-                                                                            echo '<option value="' . $valores['id_cargo'] . '">' . $valores['Nombre_Cargo'] . '</option>';
+                                                                            echo '<option value="' . $valores['id_comuna'] . '">' . $valores['Nombre_comuna'] . '</option>';
                                                                         }
                                                                         ?>
-
                                                                     </select>
                                                                 </div>
 
                                                             </div>
-
                                                         </div>
 
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                    <button type="submit" class="btn btn-primary">Agregar</button>
-                                                </div>
-                                                </form>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="modal fade" id="CrearCargo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header" style="background-color:#3f668d">
-                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ficha Cargo</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-
-
-                                                    <form method="POST" action="../../PhP/INSERTAR_CARGO.php">
                                                         <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
-                                                            Datos del Cargo</h4>
+                                                            Datos de Contacto</h4>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Nombre del Cargo</label>
+                                                                <label for="inputNombreEmpleado">Seleccione jefe de bodega</label>
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text"><i class="fas fa-user"></i>
                                                                     </div>
-                                                                    <input type="text" class="form-control" name="NombreCargo" id="NombreCargo" placeholder="Ingrese nombre del cargo">
+                                                                    <select class="form-control" name="encargado" id="encargado">
+                                                                        <!-- php aquí -->
+                                                                        <?php
+                                                                        //colocar el where cargo = Jefe Bodega
+                                                                        $sql = ("SELECT * FROM empleado");
+                                                                        $query = $conn->query($sql);
+                                                                        while ($valores = mysqli_fetch_array($query)) {
+                                                                            echo '<option value="' . $valores['Rut_Empleado'] . '">' . $valores['Nombre'] . '</option>';
+                                                                        }
+                                                                        ?>
+                                                                    </select>
                                                                 </div>
 
                                                             </div>
-
-
                                                         </div>
-
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                    <button type="submit" class="btn btn-primary">Agregar</button>
-                                                </div>
-                                                </form>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="modal fade" id="FichaCuadrilla" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header" style="background-color:#3f668d">
-                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ficha Cuadrilla</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-
-
-                                                    <form method="POST" action="../../PhP/INSERTAR_TIPOCUADRILLA.php">
-                                                        <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
-                                                            Datos de cupos de la cuadrilla</h4>
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Tipo de cuadrilla</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-user"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" name="TipoCuadrilla" id="TipoCuadrilla" placeholder="Solitario/duo">
-                                                                </div>
-
-                                                            </div>
-                                                            <!-- Estado de cuadrilla creado por defecto como desocupado -->
-
-                                                        </div>
-
-
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -752,45 +669,44 @@ include('../../Conexion/conexion.php');
                                 <table id="example2" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th>Nombre</th>
-                                            <th>Rut</th>
+                                            <th>Nombre de Bodega</th>
+                                            <th>Dirección</th>
+                                            <th>Comuna</th>
                                             <th>Email</th>
+                                            <th>Nombre del Encargado</th>
                                             <th>Teléfono</th>
-                                            <th>Cargo</th>
-                                            <th>Cuadrilla</th>
+
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT * FROM empleado where id_cargo=(Select id_cargo  FROM tipocargo)";
+                                        $sql = "SELECT * FROM bodega";
                                         //ver como mostrar el nombre en vez del cargo
 
                                         $resultado = mysqli_query($conn, $sql);
                                         while ($filas = mysqli_fetch_array($resultado)) {
-                                            $var = $filas['id_cargo'];
-                                            $sql2 = "SELECT * FROM tipocargo where id_cargo=$var";
+                                            $var = $filas['Comuna_id'];
+                                            $sql2 = "SELECT * FROM comuna where id_comuna=$var";
                                             $resultado2 = mysqli_query($conn, $sql2);
-                                            $id_Cod = mysqli_fetch_array($resultado2);
-                                            $var2 = $filas['id_cuadrilla'];
-                                            $sql3 = "SELECT * FROM cuadrilla where id_personal=$var2";
+                                            $nombrecomu = mysqli_fetch_array($resultado2);
+                                            $var2 = $filas['Rut_Encargado'];
+                                            $sql3 = "SELECT * FROM empleado where Rut_Empleado='$var2'";
                                             $resultado3 = mysqli_query($conn, $sql3);
-                                            $id_cuadrilla = mysqli_fetch_array($resultado3);
-
+                                            $datosEmpleado = mysqli_fetch_array($resultado3);
                                         ?>
                                             <tr>
-                                                <td><?php echo $filas['Nombre'] ?></td>
-                                                <td><?php echo $filas['Rut_Empleado'] ?></td>
+                                                <td><?php echo $filas['Nombre_Bodega'] ?></td>
+                                                <td><?php echo $filas['Direccion'] ?></td>
+
+
+                                                <!-- Consulta para tener el telefono del empleado y el nombre de la comuna -->
+                                                <td><?php echo $nombrecomu['Nombre_comuna'] ?></td>
                                                 <td><?php echo $filas['Email'] ?></td>
-                                                <td><?php echo $filas['Telefono'] ?></td>
-
-                                                <td><?php
-
-                                                    echo $id_Cod['Nombre_Cargo'] ?></td>
-                                                <td><?php echo $id_cuadrilla['Tipo_cuadrilla'] ?></td>
-
+                                                <td><?php echo $datosEmpleado['Nombre'] ?></td>
+                                                <td><?php echo $datosEmpleado['Telefono'] ?></td>
                                                 <td>
-                                                    <a href="../../CRUD/DELETE_Empleado.php?id=<?php echo $filas['Rut_Empleado'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
+                                                    <a href="../../CRUD/DELETE_Bodega.php?id=<?php echo $filas['Codigo_bodega'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
                                                     <button type="button" class="btn btn-primary editbtn" data-toggle="modal" data-target="#crud"><i class="fas fa-edit"></i></button>
                                                 </td>
                                             </tr>
