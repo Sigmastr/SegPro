@@ -672,7 +672,7 @@ include('../../Conexion/conexion.php');
                                                 <div class="modal-body">
 
 
-                                                    <form method="POST" action="#">
+                                                    <form method="POST" action="../../PhP/INSERTAR_CARGO.php">
                                                         <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
                                                             Datos del Cargo</h4>
                                                         <div class="form-row">
@@ -681,7 +681,7 @@ include('../../Conexion/conexion.php');
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text"><i class="fas fa-user"></i>
                                                                     </div>
-                                                                    <input type="text" class="form-control" name="NombreEmpleado" id="NombreEmpleado" placeholder="Ingrese nombre del empleado">
+                                                                    <input type="text" class="form-control" name="NombreCargo" id="NombreCargo" placeholder="Ingrese nombre del cargo">
                                                                 </div>
 
                                                             </div>
