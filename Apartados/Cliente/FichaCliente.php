@@ -870,7 +870,7 @@ include('../../Conexion/conexion.php');
             </div>
 
             <!-- MODAL CRUD EDIT -->
-            <div class="modal fade" id="crud" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal fade" id="update_user_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
               <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                   <div class="modal-header" style="background-color:#3f668d">
@@ -891,7 +891,8 @@ include('../../Conexion/conexion.php');
                           <div class="input-group-prepend">
                             <div class="input-group-text"><i class="fas fa-user"></i>
                             </div>
-                            <input type="text" class="form-control" name="NombreCliente" id="NombreCliente" placeholder="Ingrese Cliente">
+                            <input type="text" class="form-control" name="NombreCliente" id="NombreCliente" placeholder="Ingrese Cliente" value="<?php
+                                                                                                                                                  echo $row['Nombre'] ?>">
                           </div>
 
                         </div>
@@ -1149,17 +1150,6 @@ include('../../Conexion/conexion.php');
                 </div>
               </div>
             </div>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
