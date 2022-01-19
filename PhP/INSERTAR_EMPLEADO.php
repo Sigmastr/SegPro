@@ -1,5 +1,4 @@
 <?php
-
 include('../Conexion/conexion.php');
 
 $NombreEmpleado = $_POST["NombreEmpleado"];
@@ -14,12 +13,12 @@ for ($pass = '', $n = strlen($caracteres) - 1; strlen($pass) < $longpalabra;) {
     $x = rand(0, $n);
     $pass .= $caracteres[$x];
 }
-password_hash($pass, PASSWORD_DEFAULT);
-echo $pass;
+$pass = password_hash($pass, PASSWORD_DEFAULT);
+
 
 
 $insertar = "INSERT INTO empleado(Rut_Empleado,Nombre,contrasena,Email,id_cargo,id_cuadrilla,Telefono) 
-VALUES ( '$RutEmpleado',$NombreEmpleado','$pass','$Email','$Cargo','$Cuadrilla','$telefono')";
+VALUES ( '$RutEmpleado','$NombreEmpleado','$pass','$Email','$Cargo','$Cuadrilla','$telefono')";
 
 $resultado = mysqli_query($conn, $insertar);
 
@@ -28,5 +27,5 @@ if ($resultado) {
     header('Location:../Apartados/Empleado/ConfiguracionEmpleado.php ');
     die;
 } else {
-    echo $EstadoCliente;
+    echo $NombreEmpleado;
 }

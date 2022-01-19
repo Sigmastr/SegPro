@@ -13,7 +13,7 @@ $resultado = mysqli_query($conn, $insertar);
 
 if ($resultado) {
     echo "<script>alert('Registrado con éxito')</script>";
-    header('Location:../Apartados/Empleado/ConfiguracionEmpleado.php ');
+    header('Location:../Apartados/Empleado/ConfiguracionEmpleado.php');
     die;
 } else {
     echo $EstadoCliente;

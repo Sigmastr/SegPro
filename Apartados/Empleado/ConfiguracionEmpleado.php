@@ -714,16 +714,16 @@ include('../../Conexion/conexion.php');
                                                 <div class="modal-body">
 
 
-                                                    <form method="POST" action="#">
+                                                    <form method="POST" action="../../PhP/INSERTAR_TIPOCUADRILLA.php">
                                                         <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
-                                                            Datos del Cargo</h4>
+                                                            Datos de cupos de la cuadrilla</h4>
                                                         <div class="form-row">
                                                             <div class="form-group col-md-6">
                                                                 <label for="inputNombreEmpleado">Tipo de cuadrilla</label>
                                                                 <div class="input-group-prepend">
                                                                     <div class="input-group-text"><i class="fas fa-user"></i>
                                                                     </div>
-                                                                    <input type="text" class="form-control" name="TipoCuadrilla" id="TipoCuadrilla" placeholder="Solitario/duo/trío">
+                                                                    <input type="text" class="form-control" name="TipoCuadrilla" id="TipoCuadrilla" placeholder="Solitario/duo">
                                                                 </div>
 
                                                             </div>
@@ -763,9 +763,19 @@ include('../../Conexion/conexion.php');
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT * FROM empleado";
+                                        $sql = "SELECT * FROM empleado where id_cargo=(Select id_cargo  FROM tipocargo)";
+                                        //ver como mostrar el nombre en vez del cargo
+
                                         $resultado = mysqli_query($conn, $sql);
                                         while ($filas = mysqli_fetch_array($resultado)) {
+                                            $var = $filas['id_cargo'];
+                                            $sql2 = "SELECT * FROM tipocargo where id_cargo=$var";
+                                            $resultado2 = mysqli_query($conn, $sql2);
+                                            $id_Cod = mysqli_fetch_array($resultado2);
+                                            $var2 = $filas['id_cuadrilla'];
+                                            $sql3 = "SELECT * FROM cuadrilla where id_personal=$var2";
+                                            $resultado3 = mysqli_query($conn, $sql3);
+                                            $id_cuadrilla = mysqli_fetch_array($resultado3);
 
                                         ?>
                                             <tr>
@@ -773,8 +783,11 @@ include('../../Conexion/conexion.php');
                                                 <td><?php echo $filas['Rut_Empleado'] ?></td>
                                                 <td><?php echo $filas['Email'] ?></td>
                                                 <td><?php echo $filas['Telefono'] ?></td>
-                                                <td><?php echo $filas['id_cargo '] ?></td>
-                                                <td><?php echo $filas['id_cuadrilla '] ?></td>
+
+                                                <td><?php
+
+                                                    echo $id_Cod['Nombre_Cargo'] ?></td>
+                                                <td><?php echo $id_cuadrilla['Tipo_cuadrilla'] ?></td>
 
                                                 <td>
                                                     <a href="../../CRUD/DELETE_Cliente.php?id=<?php echo $filas['Rut_Empleado'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
