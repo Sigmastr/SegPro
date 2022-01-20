@@ -712,6 +712,7 @@ include('../../Conexion/conexion.php');
                                             </tr>
                                         <?php
                                         }
+                                        mysqli_close($conn);
                                         ?>
                                     </tbody>
                                 </table>
