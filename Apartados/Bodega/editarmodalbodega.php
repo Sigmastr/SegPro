@@ -14,12 +14,18 @@
                     <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
                         Datos de Bodega</h4>
                     <div class="form-row">
+                        <?php
+                        $var = $filas['Nombre_Bodega'];
+                        $sql = ("SELECT * FROM bodega where Nombre_Bodega='$var'");
+                        $query = $conn->query($sql);
+                        $var = mysqli_fetch_array($query);
+                        ?>
                         <div class="form-group col-md-6">
                             <label for="inputNombreEmpleado">Nombre de Bodega</label>
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-user"></i>
                                 </div>
-                                <input type="text" class="form-control" name="NombreBodega" id="NombreBodega" placeholder="Ingrese nombre de la bodega" value=<?php echo $filas['Nombre_Bodega'] ?>>
+                                <input type="text" class="form-control" name="NombreBodega" id="NombreBodega" placeholder="Ingrese nombre de la bodega" value=<?php echo $var['Nombre_Bodega'] ?>>
                             </div>
 
                         </div>
@@ -69,13 +75,23 @@
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><i class="fas fa-house-user"></i>
                                 </div>
+                                <?php
+                                $var = $filas['Rut_Encargado'];
+                                $sql = ("SELECT Comuna_id FROM bodega where Rut_Encargado ='$var'");
+                                $query = $conn->query($sql);
+                                $var = mysqli_fetch_array($query);
+                                ?>
                                 <select class="form-control" name="ciudad" id="ciudad" value=<?php echo $filas['Comuna_id'] ?>>
                                     <!-- php aquí -->
                                     <?php
                                     $sql = ("SELECT * FROM comuna");
                                     $query = $conn->query($sql);
                                     while ($valores = mysqli_fetch_array($query)) {
-                                        echo '<option value="' . $valores['id_comuna'] . '">' . $valores['Nombre_comuna'] . '</option>';
+                                        if ($valores['id_comuna'] == $var['Comuna_id']) {
+                                            // El selected sirve para mostrar el valor recibido de la consulta.
+                                            echo '<option selected value="' . $valores['id_comuna'] . '">' . $valores['Nombre_comuna'] . '</option>';
+                                        } else
+                                            echo '<option value="' . $valores['id_comuna'] . '">' . $valores['Nombre_comuna'] . '</option>';
                                     }
                                     ?>
                                 </select>

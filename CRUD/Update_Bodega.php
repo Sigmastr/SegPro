@@ -9,15 +9,20 @@ $region = $_POST["region"];
 $ciudad = $_POST["ciudad"];
 $encargado = $_POST["encargado"];
 
-$sql1 = mysqli_query($conn, "SELECT Codigo_bodega FROM bodega WHERE Nombre_Bodega='$NombreBodega'AND Email='$Correo' AND Direccion='$direccion'");
-$resultado = mysqli_fetch_row($sql1);
+$sql1 = mysqli_query($conn, "SELECT * FROM bodega WHERE Nombre_Bodega='$NombreBodega' OR Email='$Correo' OR Direccion='$direccion' ");
+
+
+$valores = mysqli_fetch_row($sql1);
+$rpta = $valores[0];
 
 $sql = "UPDATE bodega SET Nombre_Bodega='$NombreBodega',Email='$Correo',Direccion='$direccion',id_Region='$region',Comuna_id='$ciudad',
-Rut_Encargado='$encargado' WHERE Codigo_bodega ='$resultado[0]'";
+Rut_Encargado='$encargado' WHERE Codigo_bodega='$rpta'";
 
 $resultado = mysqli_query($conn, $sql);
 if ($resultado) {
     echo "<script>alert('Registrado con éxito')</script>";
     header('Location:../Apartados/Bodega/Bodega.php');
     die;
+} else {
+    echo    'no';
 }
