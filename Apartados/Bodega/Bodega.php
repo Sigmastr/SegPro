@@ -707,12 +707,13 @@ include('../../Conexion/conexion.php');
                                                 <td><?php echo $datosEmpleado['Telefono'] ?></td>
                                                 <td>
                                                     <a href="../../CRUD/DELETE_Bodega.php?id=<?php echo $filas['Codigo_bodega'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
-                                                    <button type="button" class="btn btn-primary editbtn" data-toggle="modal" data-target="#update_user_modal<?php echo $filas['Rut']; ?>"><i class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-primary editbtn" data-toggle="modal" data-target="#update_bodega<?php echo $filas['Codigo_bodega']; ?>"><i class="fas fa-edit"></i></button>
                                                 </td>
                                             </tr>
                                         <?php
+                                            include 'editarmodalbodega.php';
                                         }
-                                        mysqli_close($conn);
+
                                         ?>
                                     </tbody>
                                 </table>

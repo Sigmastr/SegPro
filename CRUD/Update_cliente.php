@@ -20,10 +20,16 @@ $CorreoCliente = $_POST["CorreoCliente"];
 $EstadoCliente = $_POST["EstadoCliente"];
 
 $TipoCliente = $_POST["TipoCliente"];
+echo $TipoCliente;
 $contrato = $_POST["contrato"];
 
-$sql = "UPDATE cliente SET Rut= $RutCliente, Nombre=$NombreCliente, Email=$CorreoCliente,Telefono=$telefono,Actividad=$Actividad,Pais=$pais,Region=$region,Ciudad=$ciudad,
-Direccion=$direccion,PlazoPago=$PPago,EstadoClienteSistema=$EstadoCliente,CorreoPago=$CorreoPago,FonoPago=$TelefonoCobranza,DireccionPagos=$DirecPago,LineaCredito=$LineCredit,
-Representante=$NombreRepresentante,	Id_TipoCliente=$TipoCliente,Id_TipoContrato =contrato";
+$sql = "UPDATE cliente SET Rut= '$RutCliente', Nombre='$NombreCliente', Email='$CorreoCliente',Telefono='$telefono',Actividad='$Actividad',Pais='$pais',Region='$region',Ciudad='$ciudad',
+Direccion='$direccion',PlazoPago='$PPago',EstadoClienteSistema='$EstadoCliente',CorreoPago='$CorreoPago',FonoPago='$TelefonoCobranza',DireccionPagos='$DirecPago',Linea_Credito='$LineCredit',
+Representante='$NombreRepresentante',Id_TipoCliente ='$TipoCliente',Id_TipoContrato  ='$contrato' WHERE Rut = '$RutCliente'";
 
 $resultado = mysqli_query($conn, $sql);
+if ($resultado) {
+    echo "<script>alert('Registrado con éxito')</script>";
+    header('Location:../Apartados/Cliente/FichaCliente.php');
+    die;
+}

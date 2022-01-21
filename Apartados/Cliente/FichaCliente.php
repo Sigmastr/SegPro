@@ -778,7 +778,7 @@ include('../../Conexion/conexion.php');
                                   <div class="input-group-text"><i class="fas fa-user"></i>
                                   </div>
                                   <select class="form-control" name="TipoCliente" id="TipoCliente">
-                                    <option value="0">Seleccionar tipo de Cliente</option>
+
                                     <?php
                                     $sql = ("SELECT * FROM tipocliente");
                                     $query = $conn->query($sql);
