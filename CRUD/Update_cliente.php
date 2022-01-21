@@ -2,37 +2,28 @@
 
 include('../Conexion/conexion.php');
 
-$data = '<table class="table table-bordered table-striped">
-		<tr>
-        <th>Nombre</th>
-        <th>Rut</th>
-        <th>Email</th>
-        <th>Teléfono</th>
-        <th>Región</th>
-        <th>Ciudad</th>
-        <th>Actividad</th>
-        <th>Ejecutivo</th>
-		</tr>';
+$NombreCliente = $_POST["NombreCliente"];
+$RutCliente = $_POST["RutCliente"];
+$telefono = $_POST["telefono"];
+$Actividad = $_POST["Actividad"];
+$pais = $_POST["pais"];
+$region = $_POST["region"];
+$ciudad = $_POST["ciudad"];
+$direccion = $_POST["direccion"];
+$PPago = $_POST["PPago"];
+$TelefonoCobranza = $_POST["TelefonoCobranza"];
+$CorreoPago = $_POST["CorreoPago"];
+$DirecPago = $_POST["DirecPago"];
+$LineCredit = $_POST["LineCredit"];
+$NombreRepresentante = $_POST["NombreRepresentante"];
+$CorreoCliente = $_POST["CorreoCliente"];
+$EstadoCliente = $_POST["EstadoCliente"];
 
-$query = "SELECT * FROM cliente";
+$TipoCliente = $_POST["TipoCliente"];
+$contrato = $_POST["contrato"];
 
-if (mysqli_num_rows($result) > 0) {
-    $number = 1;
-    while ($row = mysqli_fetch_assoc($result)) {
-        $data .= '<tr>
-	<td>' . $row['Nombre'] . '</td>
-	<td>' . $row['Rut'] . '</td>
-	<td>' . $row['Email'] . '</td>
-	<td>' . $row['Telefono'] . '</td>
-    <td>' . $row['Region'] . '</td>
-    <td>' . $row['Ciudad'] . '</td>
-    <td>' . $row['Actividad'] . '</td>
-    <td>' . $row['Ejecutivo'] . '</td>
-	<td>
-		<button onclick="GetUserDetails(' . $row['Rut'] . ')" class="btn btn-warning"><i class="fas fa-edit"></i></button>
-	</td>
-	
-</tr>';
-        $number++;
-    }
-}
+$sql = "UPDATE cliente SET Rut= $RutCliente, Nombre=$NombreCliente, Email=$CorreoCliente,Telefono=$telefono,Actividad=$Actividad,Pais=$pais,Region=$region,Ciudad=$ciudad,
+Direccion=$direccion,PlazoPago=$PPago,EstadoClienteSistema=$EstadoCliente,CorreoPago=$CorreoPago,FonoPago=$TelefonoCobranza,DireccionPagos=$DirecPago,LineaCredito=$LineCredit,
+Representante=$NombreRepresentante,	Id_TipoCliente=$TipoCliente,Id_TipoContrato =contrato";
+
+$resultado = mysqli_query($conn, $sql);

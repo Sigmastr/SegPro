@@ -800,7 +800,7 @@ include('../../Conexion/conexion.php');
                                     $sql = ("SELECT * FROM tipocontrato");
                                     $query = $conn->query($sql);
                                     while ($valores = mysqli_fetch_array($query)) {
-                                      echo '<option value="' . $valores['id_tipoContrato '] . '">' . $valores['periodo_acceso'] . '</option>';
+                                      echo '<option value="' . $valores['id_tipoContrato '] . '">' . $valores['Tipo'] . '</option>';
                                     }
                                     ?>
                                   </select>

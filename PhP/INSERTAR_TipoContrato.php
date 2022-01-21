@@ -5,7 +5,7 @@ include('../Conexion/conexion.php');
 $PeriodoAcceso = $_POST["PeriodoAcceso"];
 
 
-$insertar = "INSERT INTO tipocontrato(periodo_acceso) 
+$insertar = "INSERT INTO tipocontrato(Tipo) 
 VALUES ( '$PeriodoAcceso')";
 
 $resultado = mysqli_query($conn, $insertar);
