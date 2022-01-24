@@ -663,14 +663,21 @@ include('../../Conexion/conexion.php');
               <!-- small box -->
               <div class="small-box bg-warning">
                 <div class="inner">
-                  <h3>n° </h3>
+                  <?php
+                  $sql = "SELECT * FROM cliente";
+                  $resultado = mysqli_query($conn, $sql);
+                  $row = mysqli_num_rows($resultado);
+                  ?>
+                  <h3><?php
+                      echo $row;
+                      ?> </h3>
 
                   <p>Clientes</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="../Cliente/FichaCliente.php" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
 
@@ -707,14 +714,23 @@ include('../../Conexion/conexion.php');
               <!-- small box -->
               <div class="small-box bg-blue">
                 <div class="inner">
-                  <h3>n° </h3>
+                  <?php
+                  $sql = "SELECT * FROM empleado";
+                  $resultado = mysqli_query($conn, $sql);
+                  $row = mysqli_num_rows($resultado);
+                  ?>
+                  <h3><?php
+                      echo $row;
+                      ?>
+                  </h3>
 
-                  <p>Estado de Clientes</p>
+
+                  <p>Cantidad de empleados</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-person-add"></i>
                 </div>
-                <a href="#" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="../Empleado/ConfiguracionEmpleado.php" class="small-box-footer">Ver más <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
 
@@ -736,7 +752,15 @@ include('../../Conexion/conexion.php');
               <!-- small box -->
               <div class="small-box bg-red">
                 <div class="inner">
-                  <h3>n° </h3>
+                  <?php
+                  //no reconocerá a los solitarios, solo dúos
+                  $sql = "SELECT * FROM cuadrilla WHERE Tipo_cuadrilla='Duo'";
+                  $resultado = mysqli_query($conn, $sql);
+                  $row = mysqli_num_rows($resultado);
+                  ?>
+                  <h3><?php
+                      echo $row;
+                      ?> </h3>
 
                   <p>Grupos de Trabajo</p>
                 </div>
@@ -751,14 +775,20 @@ include('../../Conexion/conexion.php');
               <!-- small box -->
               <div class="small-box bg-info">
                 <div class="inner">
-                  <h3>n°</h3>
-
-                  <p>Bodegas</p>
+                  <?php
+                  // $sql = "SELECT * FROM bodega";
+                  // $resultado = mysqli_query($conn, $sql);
+                  // $row = mysqli_num_rows($resultado);
+                  ?>
+                  <h3>
+                    n°
+                  </h3>
+                  <p>Servicio Técnico</p>
                 </div>
                 <div class="icon">
                   <i class="ion ion-bag"></i>
                 </div>
-                <a href="#" class="small-box-footer">Ver Más <i class="fas fa-arrow-circle-right"></i></a>
+                <a href="../Bodega/Bodega.php" class="small-box-footer">Ver Más <i class="fas fa-arrow-circle-right"></i></a>
               </div>
             </div>
 

@@ -14,3 +14,6 @@ if ($resultado) {
 } else {
     echo 'error';
 }
+
+
+//no se puede eliminar un empleado, si es que este está a cargo de una bodega. Debe primero cambiar el encargado.

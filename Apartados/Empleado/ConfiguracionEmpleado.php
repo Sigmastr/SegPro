@@ -763,7 +763,7 @@ include('../../Conexion/conexion.php');
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT * FROM empleado where id_cargo=(Select id_cargo  FROM tipocargo)";
+                                        $sql = "SELECT * FROM empleado where id_cargo IN (Select id_cargo  FROM tipocargo )";
                                         //ver como mostrar el nombre en vez del cargo
 
                                         $resultado = mysqli_query($conn, $sql);
@@ -791,10 +791,12 @@ include('../../Conexion/conexion.php');
 
                                                 <td>
                                                     <a href="../../CRUD/DELETE_Empleado.php?id=<?php echo $filas['Rut_Empleado'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
-                                                    <button type="button" class="btn btn-primary editbtn" data-toggle="modal" data-target="#crud"><i class="fas fa-edit"></i></button>
+                                                    <button type="button" class="btn btn-primary editbtn" data-toggle="modal" data-target="#crud<?php echo $filas['Rut_Empleado']; ?>"><i class="fas fa-edit"></i></button>
+
                                                 </td>
                                             </tr>
                                         <?php
+                                            include 'EditarEmpleado.php';
                                         }
                                         ?>
                                     </tbody>
