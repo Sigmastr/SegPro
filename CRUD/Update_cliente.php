@@ -20,7 +20,7 @@ $CorreoCliente = $_POST["CorreoCliente"];
 $EstadoCliente = $_POST["EstadoCliente"];
 
 $TipoCliente = $_POST["TipoCliente"];
-echo $TipoCliente;
+
 $contrato = $_POST["contrato"];
 
 $sql = "UPDATE cliente SET Rut= '$RutCliente', Nombre='$NombreCliente', Email='$CorreoCliente',Telefono='$telefono',Actividad='$Actividad',Pais='$pais',Region='$region',Ciudad='$ciudad',

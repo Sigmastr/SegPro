@@ -2,7 +2,7 @@
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header" style="background-color:#3f668d">
-                <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ficha Empleado</h5>
+                <h5 class="modal-title" style="color:white" id="exampleModalLabel">Edición Empleado</h5>
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
@@ -10,7 +10,7 @@
             <div class="modal-body">
 
 
-                <form method="POST" action="#">
+                <form method="POST" action="../../CRUD/UPDATE_empleado.php">
                     <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
                         Datos del Empleado</h4>
                     <div class="form-row">
@@ -58,6 +58,17 @@
 
 
                     </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputPass">Contraseña:</label>
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><i class="fas fa-mobile"></i>
+                                </div>
+                                <input type="password" class="form-control" name="pass" id="pass" placeholder="A-Z,0-9">
+                            </div>
+
+                        </div>
+                    </div>
                     <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #4437ff;">
                         Asignación de estado</h4>
 
@@ -68,22 +79,20 @@
                                 <div class="input-group-text"><i class="fas fa-user"></i>
                                 </div>
                                 <?php
-                                $var = $id_cuadrilla['Tipo_cuadrilla'];
-                                $sql = ("SELECT id_personal  FROM cuadrilla where Tipo_cuadrilla='$var'");
-                                $query = $conn->query($sql);
+                                $var = $id_cuadrilla['id_personal'];
+                                $sql1 = "SELECT * FROM empleado WHERE id_cuadrilla ='$var'";
+                                $query = $conn->query($sql1);
                                 $var = mysqli_fetch_array($query);
                                 ?>
                                 <select class="form-control" name="Cuadrilla" id="Cuadrilla">
                                     <?php
-                                    $sql = ("SELECT * FROM empleado");
+                                    $sql = ("SELECT * FROM cuadrilla");
                                     $query = $conn->query($sql);
                                     while ($valores = mysqli_fetch_array($query)) {
-                                        if ($valores['id_cuadrilla'] == $var['id_personal']) {
-                                            // $valores['Id_Region '] == $var['Region']
-                                            echo '<option selected value="' . $valores['Id_Region '] . '">' . $valores['Nombre'] . '</option>';
-                                        }
-                                        echo '<option value="' . $valores['id_personal'] . '">' . $valores['Tipo_cuadrilla'] . '</option>';
-                                        //por defecto se creará como libre
+                                        if ($valores['id_personal'] == $var['id_cuadrilla']) {
+                                            echo '<option selected value="' . $valores['id_personal'] . '">' . $valores['Tipo_cuadrilla'] . '</option>';
+                                        } else
+                                            echo '<option  value="' . $valores['id_personal'] . '">' . $valores['Tipo_cuadrilla'] . '</option>';
                                     }
                                     ?>
 
