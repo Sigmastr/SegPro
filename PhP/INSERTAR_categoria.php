@@ -2,11 +2,11 @@
 
 include('../Conexion/conexion.php');
 
-$nombreCargo = $_POST["NombreCargo"];
+$nombre = $_POST["nombre"];
 
 
 
-$insertar = "INSERT INTO tipocargo(Nombre_Cargo) 
+$insertar = "INSERT INTO categoria(Nombre) 
 VALUES ( '$nombre')";
 
 $resultado = mysqli_query($conn, $insertar);
@@ -15,4 +15,6 @@ if ($resultado) {
     echo "<script>alert('Registrado con éxito')</script>";
     header('Location:../Apartados/Maestro/Categoria.php');
     die;
+} else {
+    echo $EstadoCliente;
 }

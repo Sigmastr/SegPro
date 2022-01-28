@@ -2,17 +2,15 @@
 
 include('../Conexion/conexion.php');
 
-$nombreCargo = $_POST["NombreCargo"];
+$id = $_GET['id'];
 
-
-
-$insertar = "INSERT INTO tipocargo(Nombre_Cargo) 
-VALUES ( '$nombre')";
-
-$resultado = mysqli_query($conn, $insertar);
+$sql = "DELETE FROM categoria where id_Categoria  ='$id'";
+$resultado = mysqli_query($conn, $sql);
 
 if ($resultado) {
     echo "<script>alert('Registrado con éxito')</script>";
     header('Location:../Apartados/Maestro/Categoria.php');
     die;
+} else {
+    echo 'error';
 }

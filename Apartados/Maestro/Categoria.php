@@ -8,7 +8,7 @@ include('../../Conexion/conexion.php');
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Sección Empleados</title>
+    <title>Categoría</title>
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback" />
     <!-- Font Awesome Icons -->
@@ -82,7 +82,7 @@ include('../../Conexion/conexion.php');
         <!-- Main Sidebar Container -->
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
-            <a href="index3.html" class="brand-link">
+            <a href="#" class="brand-link">
                 <img src="../../recursos/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8" />
                 <span class="brand-text font-weight-light">SegProject</span>
             </a>
@@ -96,7 +96,7 @@ include('../../Conexion/conexion.php');
                         <img src="../../recursos/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
                     </div>
                     <div class="info">
-                        <a href="#" class="d-block">UserName</a>
+                        <a href="#" class="d-block">NombreUsuario</a>
                     </div>
                 </div>
 
@@ -501,7 +501,7 @@ include('../../Conexion/conexion.php');
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">Sección Ficha Empleados</h1>
+                            <h1 class="m-0">Sección Categorías</h1>
                         </div>
                         <!-- /.col -->
 
@@ -530,24 +530,21 @@ include('../../Conexion/conexion.php');
                                     <!-- Aquí poner los botones -->
                                     <!-- Button trigger modal -->
                                     <div class="botones" style="margin-bottom:1%; margin-top:1%">
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#FichaEmpleado">
-                                            Ingresar Empleado
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#Tiposervicio">
+                                            Agregar Categoría
                                         </button>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#CrearCargo">
-                                            Crear Cargo
-                                        </button>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#FichaCuadrilla">
-                                            Ingresar Cuadrilla
-                                        </button>
+
 
                                     </div>
 
                                     <!-- Modal -->
-                                    <div class="modal fade" id="FichaEmpleado" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+
+
+                                    <div class="modal fade" id="Tiposervicio" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div class="modal-dialog modal-lg" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header" style="background-color:#3f668d">
-                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ficha Empleado</h5>
+                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ingreso de Categoría</h5>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
@@ -555,133 +552,17 @@ include('../../Conexion/conexion.php');
                                                 <div class="modal-body">
 
 
-                                                    <form method="POST" action="../../PhP/INSERTAR_EMPLEADO.php">
+                                                    <form method="POST" action="../../PhP/INSERTAR_categoria.php">
                                                         <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
-                                                            Datos del Empleado</h4>
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Nombre del Empleado</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-user"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" name="NombreEmpleado" id="NombreEmpleado" placeholder="Ingrese nombre del empleado">
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputRut">Rut</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-address-card"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" name="RutEmpleado" id="RutEmpleado" placeholder="11111111-1">
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
+                                                            Datos de la Categoría</h4>
                                                         <div class="form-row">
 
                                                             <div class="form-group col-md-6">
-                                                                <label for="inputTlf">Telefono</label>
+                                                                <label for="inputSubcategoría">Nombre:</label>
                                                                 <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-mobile"></i>
+                                                                    <div class="input-group-text"><i class="fas fa-building"></i>
                                                                     </div>
-                                                                    <input type="text" class="form-control" name="telefono" id="telefono" placeholder="911111111">
-                                                                </div>
-
-                                                            </div>
-
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputEmail">Email</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-envelope"></i>
-                                                                    </div>
-                                                                    <input type="email" class="form-control" name="Email" id="Email" placeholder="contacto@dominio.com">
-                                                                </div>
-
-                                                            </div>
-
-
-                                                        </div>
-                                                        <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #4437ff;">
-                                                            Asignación de estado</h4>
-
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Seleccionar Cuadrilla</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-user"></i>
-                                                                    </div>
-                                                                    <select class="form-control" name="Cuadrilla" id="Cuadrilla">
-                                                                        <?php
-                                                                        $sql = ("SELECT * FROM cuadrilla");
-                                                                        $query = $conn->query($sql);
-                                                                        while ($valores = mysqli_fetch_array($query)) {
-                                                                            echo '<option value="' . $valores['id_personal'] . '">' . $valores['Tipo_cuadrilla'] . '</option>';
-                                                                            //por defecto se creará como libre
-                                                                        }
-                                                                        ?>
-
-                                                                    </select>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputCargo">Seleccione Cargo</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-address-card"></i>
-                                                                    </div>
-                                                                    <select class="form-control" name="cargo" id="cargo">
-                                                                        <?php
-                                                                        $sql = ("SELECT * FROM tipocargo");
-                                                                        $query = $conn->query($sql);
-                                                                        while ($valores = mysqli_fetch_array($query)) {
-                                                                            echo '<option value="' . $valores['id_cargo'] . '">' . $valores['Nombre_Cargo'] . '</option>';
-                                                                        }
-                                                                        ?>
-
-                                                                    </select>
-                                                                </div>
-
-                                                            </div>
-
-                                                        </div>
-
-
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                    <button type="submit" class="btn btn-primary">Agregar</button>
-                                                </div>
-                                                </form>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="modal fade" id="CrearCargo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header" style="background-color:#3f668d">
-                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ficha Cargo</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-
-
-                                                    <form method="POST" action="../../PhP/INSERTAR_CARGO.php">
-                                                        <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
-                                                            Datos del Cargo</h4>
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Nombre del Cargo</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-user"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" name="NombreCargo" id="NombreCargo" placeholder="Ingrese nombre del cargo">
+                                                                    <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Ingrese el nombre de la categoría">
                                                                 </div>
 
                                                             </div>
@@ -690,46 +571,6 @@ include('../../Conexion/conexion.php');
                                                         </div>
 
 
-                                                </div>
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                                                    <button type="submit" class="btn btn-primary">Agregar</button>
-                                                </div>
-                                                </form>
-
-
-                                            </div>
-
-                                        </div>
-                                    </div>
-                                    <div class="modal fade" id="FichaCuadrilla" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-lg" role="document">
-                                            <div class="modal-content">
-                                                <div class="modal-header" style="background-color:#3f668d">
-                                                    <h5 class="modal-title" style="color:white" id="exampleModalLabel">Ficha Cuadrilla</h5>
-                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                        <span aria-hidden="true">&times;</span>
-                                                    </button>
-                                                </div>
-                                                <div class="modal-body">
-
-
-                                                    <form method="POST" action="../../PhP/INSERTAR_TIPOCUADRILLA.php">
-                                                        <h4 style="font-size:20px;font-weight:bold;margin:auto;margin-bottom:4px;border-bottom-style: solid;border-bottom-color: #00c0ef;">
-                                                            Datos de cupos de la cuadrilla</h4>
-                                                        <div class="form-row">
-                                                            <div class="form-group col-md-6">
-                                                                <label for="inputNombreEmpleado">Tipo de cuadrilla</label>
-                                                                <div class="input-group-prepend">
-                                                                    <div class="input-group-text"><i class="fas fa-user"></i>
-                                                                    </div>
-                                                                    <input type="text" class="form-control" name="TipoCuadrilla" id="TipoCuadrilla" placeholder="Solitario/duo">
-                                                                </div>
-
-                                                            </div>
-                                                            <!-- Estado de cuadrilla creado por defecto como desocupado -->
-
-                                                        </div>
 
 
                                                 </div>
@@ -752,52 +593,38 @@ include('../../Conexion/conexion.php');
                                 <table id="example2" class="table table-bordered table-hover">
                                     <thead>
                                         <tr>
+
                                             <th>Nombre</th>
-                                            <th>Rut</th>
-                                            <th>Email</th>
-                                            <th>Teléfono</th>
-                                            <th>Cargo</th>
-                                            <th>Cuadrilla</th>
+
+
                                             <th>Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $sql = "SELECT * FROM empleado where id_cargo IN (Select id_cargo  FROM tipocargo )";
+                                        $sql = "SELECT * FROM categoria";
                                         //ver como mostrar el nombre en vez del cargo
-
+                                        // Agregar categoría al cuadro
                                         $resultado = mysqli_query($conn, $sql);
                                         while ($filas = mysqli_fetch_array($resultado)) {
-                                            $var = $filas['id_cargo'];
-                                            $sql2 = "SELECT * FROM tipocargo where id_cargo=$var";
-                                            $resultado2 = mysqli_query($conn, $sql2);
-                                            $id_Cod = mysqli_fetch_array($resultado2);
-                                            $var2 = $filas['id_cuadrilla'];
-                                            $sql3 = "SELECT * FROM cuadrilla where id_personal=$var2";
-                                            $resultado3 = mysqli_query($conn, $sql3);
-                                            $id_cuadrilla = mysqli_fetch_array($resultado3);
 
                                         ?>
                                             <tr>
+
                                                 <td><?php echo $filas['Nombre'] ?></td>
-                                                <td><?php echo $filas['Rut_Empleado'] ?></td>
-                                                <td><?php echo $filas['Email'] ?></td>
-                                                <td><?php echo $filas['Telefono'] ?></td>
 
-                                                <td><?php
 
-                                                    echo $id_Cod['Nombre_Cargo'] ?></td>
-                                                <td><?php echo $id_cuadrilla['Tipo_cuadrilla'] ?></td>
+                                                <!-- Consulta para tener el telefono del empleado y el nombre de la comuna -->
 
                                                 <td>
-                                                    <a href="../../CRUD/DELETE_Empleado.php?id=<?php echo $filas['Rut_Empleado'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
-                                                    <button type="button" class="btn btn-primary editbtn" data-toggle="modal" data-target="#crud<?php echo $filas['Rut_Empleado']; ?>"><i class="fas fa-edit"></i></button>
-
+                                                    <a href="../../CRUD/DELETE_categoria.php?id=<?php echo $filas['id_Categoria'] ?>"><button type="button" class="btn btn-danger"><i class="fas fa-trash"></i></button></a>
+                                                    <button type="button" class="btn btn-primary editbtn" data-toggle="modal" data-target="#update_category<?php echo $filas['id_Categoria']; ?>"><i class="fas fa-edit"></i></button>
                                                 </td>
                                             </tr>
                                         <?php
-                                            include 'EditarEmpleado.php';
+                                            include 'editService.php';
                                         }
+
                                         ?>
                                     </tbody>
                                 </table>
